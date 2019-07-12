@@ -7,12 +7,13 @@ background = 0, 0, 0
 screen = pygame.display.set_mode(size)
 
 droplets = []
-for i in range(250):
+for i in range(500):
     x = random.randint(0,width)
     y = random.randint(100,400) * -1
     grav = random.randint(1,5)
+    scale = random.randint(2,4)
 
-    droplets.append(Drop(i, x, y, grav, screen))
+    droplets.append(Drop(i, x, y, grav, scale, screen))
 
 while True:
     for event in pygame.event.get():
