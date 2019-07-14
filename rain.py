@@ -9,9 +9,9 @@ screen = pygame.display.set_mode(size)
 droplets = []
 for i in range(500):
     x = random.randint(0,width)
-    y = random.randint(100,400) * -1
-    grav = random.randint(1,5)
-    scale = random.randint(2,4)
+    y = random.randint(50,200) * -1
+    grav = random.uniform(2,3)
+    scale = random.uniform(1,4)
 
     droplets.append(Drop(i, x, y, grav, scale, screen))
 
@@ -22,5 +22,6 @@ while True:
     screen.fill(background)
     for obj in droplets:
         obj.fall()
+        obj.splash()
 
     pygame.display.update()

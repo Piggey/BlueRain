@@ -29,4 +29,16 @@ class Drop(object):
     
         pygame.draw.rect(self.surface, self.color, [self.x, self.y, self.width, self.height])
 
-        
+    def splash(self):
+        x1 = self.x
+        x2 = self.x
+        y = self.window_height
+        size = 1.2 * self.scale
+
+        if(self.y + self.height > self.window_height):
+            x1 -= 10
+            y -= 10
+            x2 += 10
+
+            pygame.draw.rect(self.surface, self.color, [x1, y, size, size])
+            pygame.draw.rect(self.surface, self.color, [x2, y, size, size])
